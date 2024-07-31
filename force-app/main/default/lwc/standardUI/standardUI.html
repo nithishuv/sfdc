@@ -1,0 +1,14 @@
+<template>
+	<lightning-record-edit-form id="recordViewForm" object-api-name="Contact">
+		<lightning-messages></lightning-messages>
+		<template for:each={contactFields} for:item="contactsobj">
+			<div key={contactsobj.Id}>
+				
+				<lightning-input-field field-name={contactsobj.fieldPath} name={contactsobj.fieldPath}  class={contactsobj.fieldPath} onchange={changeHandler}></lightning-input-field>
+				
+			</div>
+		</template>
+		<lightning-button type="submit" label="Create record"></lightning-button>
+	
+	</lightning-record-edit-form>
+</template>
